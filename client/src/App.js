@@ -11,7 +11,6 @@ const myIcon = new Icon({
 function ChangeMapView({ coords }) {
   const map = useMap();
   map.setView(coords, map.getZoom());
-
   return null;
 }
 
@@ -35,10 +34,12 @@ class App extends Component{
         lng: position.coords.longitude
       },
        haveUserLocation: true,
-       zoom: 13,
+       zoom: 13
       });
-     console.log(position);
-    });
+    }, () =>{
+      console.log('dddddddd');
+    }
+    );
     
   }
   
